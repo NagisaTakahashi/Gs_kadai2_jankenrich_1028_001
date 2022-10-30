@@ -1,0 +1,189 @@
+
+/* -------body--------- */
+
+body{
+  background-color:#fff;
+  margin: 0;
+  /* -webkit-appearance: none; */
+  font-family:'playfair-display','mr-eaves-modern','ryo-gothic-plusn',sans-serif,serif;
+  overflow-wrap: break-word;
+}
+
+
+/* -------header--------- */
+
+
+
+
+.header_1{
+  height: 40px;
+  padding: 8px;
+  background-color: rgb(248,248,248);
+  border-bottom: solid 1px rgb(229,231,235);
+  text-align: center;
+  max-width: 100%;
+}
+
+.header_logo{
+  height: 40px;
+}
+
+.header_2{
+  height: 36px;
+  padding: 8px;
+  background-color: #fff;
+  border-bottom: solid 1px rgb(229,231,235);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'ryo-gothic-plusn';
+  letter-spacing: 0.1em;
+}
+
+
+/* -------main--------- */
+
+.main{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 80vh;
+  letter-spacing: 0.1em;
+}
+
+
+.main P{
+  color: #E88D80;
+  font-size: 1.2rem;
+  margin-bottom: 8vh;
+  font-family: 'ryo-gothic-plusn';
+}
+
+
+.kokkaku_btn{
+  background-color: #FEE5DB;
+  border:solid 1px #E88D80;
+  color: #E88D80;
+  font-size: 1.2rem;
+  width: 80vw;
+  height: 8vh;
+  border-radius: 4vh;
+  margin-bottom: 6vh;
+  font-family: 'playfair-display','ryo-gothic-plusn';
+  letter-spacing: 0.1em;
+}
+
+.kokkaku_btn:hover{
+  background-color: #E88D80;
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+
+/* -------選んだ後のモーダルウィンドウ--------- */
+
+
+/* モーダル部分の全体枠 */
+.modal_container{
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: auto;
+}
+
+/* モーダル部分の背景（グレー透過） */
+.overlay{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 50%;
+}
+
+/* モーダル部分の上下中央配置 */
+.modal_body{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/*モーダル内のコンテンツの指定*/
+.modal_content{
+  background: #fff;
+  padding: 4vh 4vw;
+  box-sizing: border-box;
+  position: relative;
+  max-width: 500px;
+  width: 84vw;
+  height: 80vh;
+}
+
+.modal_content img{
+  width: 70%;
+}
+
+.modal_text{
+  margin: 6% 0;
+}
+
+.modal_content p {
+  font-size:0.8rem;
+  margin-bottom: 4%;
+}
+
+/*モーダルを閉じるボタンの指定*/
+.modal_close{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 1.2vh;
+  right: 2.8vw;
+  width: 40px;
+  height: 40px;
+  font-size: 40px;
+  color: #E88D80;
+  cursor: pointer;
+}
+
+/* モダール内のリンク先 */
+
+
+
+.recommend_btn{
+  background-color: #FEE5DB;
+  border: solid 1px #E88D80;
+  color: #E88D80;
+  font-size: 0.6rem;
+  width: 80%;
+  height: 6vh;
+  border-radius: 4vh;
+  font-family: 'playfair-display','ryo-gothic-plusn';
+  margin: 3% 0;
+}
+
+.recommend_btn p{
+  margin: 0;
+}
+
+.recommend_btn:hover{
+  background-color: #E88D80;
+  color: #fff;
+}
+
+
+
+
+
+
+

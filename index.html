@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>骨格じゃんけん</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Adobe font -->
+  <script>
+    (function(d) {
+      var config = {
+        kitId: 'kgm8lpi',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+    })(document);
+  </script>
+
+  <!-- JQueryが先!! -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- 次にJS! -->
+  <script src="js.js"></script>
+
+
+
+</head>
+
+<body>
+
+  <header>
+
+    <div class="header_1">
+      <img src="https://recouture.s3.ap-northeast-1.amazonaws.com/logo.png" alt="header_logo" class="header_logo">
+    </div>
+
+    <div class="header_2">
+      <p>似合わせ診断</p>
+    </div>
+
+
+  </header>
+
+  <main class="main">
+
+    <p>＼ あなたの骨格を選んでね ／</p>
+
+    <div class="kokkaku_btn_wrapper">
+      <button id="btn_st" class="kokkaku_btn modal_open">Straight</button>
+      <button id="btn_wv" class="kokkaku_btn modal_open">Wave</button>
+      <button id="btn_nt" class="kokkaku_btn modal_open">Natural</button>
+      <button id="btn_unkown" class="kokkaku_btn modal_open">分からない</button>
+    </div>
+
+
+
+    <!-- 選んだ後のモーダルウィンドウ -->
+
+
+    <div class="modal_container">
+      <div class="overlay"></div>
+      <div class="modal_body">
+        
+
+        <div class="modal_content">
+
+          <div class="modal_close">×</div>
+
+          <img src="img/girl_natural.png" alt="kokkaku_img" id="kokkaku_card_img">
+
+          <div class="modal_text">
+
+            <p>あなたが選んだ骨格は「<span id="kokkaku_type_jpn">ここに表示</span>」です✨</p>
+            
+            <p>Recoutureのおすすめを見てみよう♥</p>
+
+          </div>
+
+          <div class="modal_btn">
+
+            <button class="recommend_btn" id="recommend_design">
+              骨格<span id="kokkaku_type_eng">ここに表示</span>さんに似合う服はこちら
+            </button>
+        
+            <button class="recommend_btn" id="recommend_item">
+              骨格<span id="kokkaku_type_eng">ここに表示</span>さんにオススメの３枚はこれ！
+            </button>
+        
+            <button class="recommend_btn" id="recommend_custom">
+              骨格<span id="kokkaku_type_eng">ここに表示</span>さんにオススメのカスタマイズ
+            </button>
+
+          </div>
+
+
+        </div>
+        
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </main>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+</body>
+
+</html>
+
