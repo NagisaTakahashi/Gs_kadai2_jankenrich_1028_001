@@ -90,6 +90,17 @@ $(function(){
 
 
 
+let F = ['https://www.instagram.com/recouture_official/guide/straight/17964207523716827/', 'https://www.instagram.com/recouture_official/guide/wave/17991004261479437/', 'https://www.instagram.com/recouture_official/guide/natural/17903782181590424/','#'];
+
+
+$(function(){
+  $("#recommend_design").on('click', function(){
+  window.location.href = (F[A]); //リンク遷移切替したいので配列Fを使用
+});
+});
+
+
+
 
 
 
