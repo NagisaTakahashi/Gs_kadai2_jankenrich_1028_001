@@ -1,6 +1,13 @@
 
 // alert(1111);
 
+
+
+
+
+
+
+
 //これを使うと押したボタンの情報は取得できる
 
 // $(function(){
@@ -76,35 +83,35 @@
 
 // ここからアイテム配列（image、title、detail）の出し分け設定
 
-let AA = null; //変数AAを用意する
+// let AA = null; //変数AAを用意する
 
-let BB = [0,1,2,3]; //共通化するために配列BBに変数AAを入れる
+// let BB = [0,1,2,3]; //共通化するために配列BBに変数AAを入れる
 
-//以下共通化した数字を各ボタンの押下と紐付け（定義）
+// //以下共通化した数字を各ボタンの押下と紐付け（定義）
 
-$("#btn_st").on('click', function(){
-  AA = 0;
-  console.log(BB[AA]);
-});
+// $("#btn_st").on('click', function(){
+//   AA = 0;
+//   console.log(BB[AA]);
+// });
 
-$("#btn_wv").on('click', function(){
-  AA = 1;
-  console.log(BB[AA]);
-});
+// $("#btn_wv").on('click', function(){
+//   AA = 1;
+//   console.log(BB[AA]);
+// });
 
-$("#btn_nt").on('click', function(){
-  AA = 2;
-  console.log(BB[AA]);
-});
+// $("#btn_nt").on('click', function(){
+//   AA = 2;
+//   console.log(BB[AA]);
+// });
 
-$("#btn_unkown").on('click', function(){
-  AA = 3;
-  console.log(BB[AA]);
-});
+// $("#btn_unkown").on('click', function(){
+//   AA = 3;
+//   console.log(BB[AA]);
+// });
 
 
-let CC = ['Straight', 'Wave', 'Natural','分からない'];
-let DD = ['ストレート', 'ウェーブ', 'ナチュラル','分からない'];
+// let CC = ['Straight', 'Wave', 'Natural','分からない'];
+// let DD = ['ストレート', 'ウェーブ', 'ナチュラル','分からない'];
 
 
 
@@ -458,6 +465,118 @@ $("#btn_unkown").on("click",function(){
   $("#li_item_detail_3").text(object_itemlist[all_num3].detail)
 }
 );
+
+
+// 共通処理
+
+// $(document).ready(function () {
+//   console.log("ready!");
+//   $("#li_item_image_1").attr("src",object_itemlist[all_num1].image)
+//   $("#li_item_title_1").text(object_itemlist[all_num1].title)
+//   $("#li_item_detail_1").text(object_itemlist[all_num1].detail)
+//   $("#li_item_image_2").attr("src",object_itemlist[all_num2].image)
+//   $("#li_item_title_2").text(object_itemlist[all_num2].title)
+//   $("#li_item_detail_2").text(object_itemlist[all_num2].detail)
+//   $("#li_item_image_3").attr("src",object_itemlist[all_num3].image)
+//   $("#li_item_title_3").text(object_itemlist[all_num3].title)
+//   $("#li_item_detail_3").text(object_itemlist[all_num3].detail)
+// });
+
+
+
+var AAA = null;
+var BBB = [0,1,2,3];
+
+
+
+var url = location.href;
+var paramArray = [];
+urlsplt = url.split("?");
+parsplt = urlsplt[1].split("&");
+ 
+for ( i = 0; i < parsplt.length; i++ ) {
+param = parsplt[i].split("=");
+paramArray.push(param[0]);
+paramArray[param[0]] = param[1];
+}
+ 
+if ( paramArray["id"] == "Straight") {
+  // alert("ストレートから来ました");
+  var AAA = 0;
+  //ストから来た人向け
+  $(document).ready(function () {
+    console.log("ready!");
+    $("#li_item_image_1").attr("src",object_itemlist[st_num1].image)
+    $("#li_item_title_1").text(object_itemlist[st_num1].title)
+    $("#li_item_detail_1").text(object_itemlist[st_num1].detail)
+    $("#li_item_image_2").attr("src",object_itemlist[st_num2].image)
+    $("#li_item_title_2").text(object_itemlist[st_num2].title)
+    $("#li_item_detail_2").text(object_itemlist[st_num2].detail)
+    $("#li_item_image_3").attr("src",object_itemlist[st_num3].image)
+    $("#li_item_title_3").text(object_itemlist[st_num3].title)
+    $("#li_item_detail_3").text(object_itemlist[st_num3].detail)
+  });
+// URLの一部が[id=Straight]の場合の処理
+} else if ( paramArray["id"] == "Wave") {
+  // alert("WVから来ました");
+  var AAA = 1;
+
+//WVから来た人向け
+  $(document).ready(function () {
+    $("#li_item_image_1").attr("src",object_itemlist[wv_num1].image)
+    $("#li_item_title_1").text(object_itemlist[wv_num1].title)
+    $("#li_item_detail_1").text(object_itemlist[wv_num1].detail)
+    $("#li_item_image_2").attr("src",object_itemlist[wv_num2].image)
+    $("#li_item_title_2").text(object_itemlist[wv_num2].title)
+    $("#li_item_detail_2").text(object_itemlist[wv_num2].detail)
+    $("#li_item_image_3").attr("src",object_itemlist[wv_num3].image)
+    $("#li_item_title_3").text(object_itemlist[wv_num3].title)
+    $("#li_item_detail_3").text(object_itemlist[wv_num3].detail)
+    console.log("ready!");
+  });
+
+// URLの一部が[id=Wave]の場合の処理
+} else if ( paramArray["id"] == "Natural") {
+  // alert("NTから来ました");
+  var AAA = 2;
+  //NTから来た人向け
+  $(document).ready(function () {
+  console.log("ready!");
+  $("#li_item_image_1").attr("src",object_itemlist[nt_num1].image)
+  $("#li_item_title_1").text(object_itemlist[nt_num1].title)
+  $("#li_item_detail_1").text(object_itemlist[nt_num1].detail)
+  $("#li_item_image_2").attr("src",object_itemlist[nt_num2].image)
+  $("#li_item_title_2").text(object_itemlist[nt_num2].title)
+  $("#li_item_detail_2").text(object_itemlist[nt_num2].detail)
+  $("#li_item_image_3").attr("src",object_itemlist[nt_num3].image)
+  $("#li_item_title_3").text(object_itemlist[nt_num3].title)
+  $("#li_item_detail_3").text(object_itemlist[nt_num3].detail)
+});
+  // URLの一部が[id=Wave]の場合の処理
+  
+} else if ( paramArray["id"] == "unknown") {
+  // alert("わからないから来ました");
+  var AAA = 3;
+  //UNから来た人向け
+  $(document).ready(function () {
+    console.log("ready!");
+    $("#li_item_image_1").attr("src",object_itemlist[all_num1].image)
+    $("#li_item_title_1").text(object_itemlist[all_num1].title)
+    $("#li_item_detail_1").text(object_itemlist[all_num1].detail)
+    $("#li_item_image_2").attr("src",object_itemlist[all_num2].image)
+    $("#li_item_title_2").text(object_itemlist[all_num2].title)
+    $("#li_item_detail_2").text(object_itemlist[all_num2].detail)
+    $("#li_item_image_3").attr("src",object_itemlist[all_num3].image)
+    $("#li_item_title_3").text(object_itemlist[all_num3].title)
+    $("#li_item_detail_3").text(object_itemlist[all_num3].detail)
+    
+  });
+  // URLの一部が[id=unknown]の場合の処理
+};
+
+
+
+
 
 
 
