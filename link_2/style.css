@@ -53,11 +53,51 @@ body{
 }
 
 
-.main P{
+.main p{
   color: #E88D80;
   font-size: 1.2rem;
-  margin-bottom: 8vh;
   font-family: 'ryo-gothic-plusn';
 }
 
+.main_title{
+  margin-bottom: 8vh;
+}
+
+
 /* ここまでは親CSSと共通（コピペ）→次はコンポーネント化しておきたい */
+
+/* ここから厳選３枚のリスト表示部分 */
+
+.recommend_item{
+  width: 90vw;
+  height: 66vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+
+.li_item{
+  width: 45vw;
+}
+
+.li_item_title{
+  display: table-cell;
+  width: 45vw;
+  height: 4vh;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+.li_item_detail{
+  text-align: left;
+  padding: 1vh 1vw;
+}
+
+.li_item_img{
+  width: 45vw;
+  height: 22vh;
+  object-fit: cover;
+  padding: 0 1vw 1vh;
+  box-sizing: border-box;
+}
