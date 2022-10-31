@@ -5,30 +5,6 @@
 
 
 
-
-
-
-//これを使うと押したボタンの情報は取得できる
-
-// $(function(){
-//   $(".recommend_btn").click(function(){
-//     console.log(500);
-//     $("#idLoadLlink").load("../index.html #btn_st");
-//   });
-// });
-
-
-// $(function(){
-
-
-// $(".recommend_btn").click(function(){
-//   console.log(500);
-//   $("#idLoadLlink").load("../index.html #btn_st");
-// });
-// });
-
-
-
 // // コピペ開始
 
 // let A = null; //変数Aを用意する
@@ -36,26 +12,6 @@
 // let B = [0,1,2,3]; //共通化するために配列Bに変数Aを入れる
 
 // //以下共通化した数字を各ボタンの押下と紐付け（定義）
-
-// $("#btn_st").on('click', function(){
-//   A = 0;
-//   // console.log(B[A]);
-// });
-
-// $("#btn_wv").on('click', function(){
-//   A = 1;
-//   // console.log(B[A]);
-// });
-
-// $("#btn_nt").on('click', function(){
-//   A = 2;
-//   // console.log(B[A]);
-// });
-
-// $("#btn_unkown").on('click', function(){
-//   A = 3;
-//   // console.log(B[A]);
-// });
 
 
 // let C = ['Straight', 'Wave', 'Natural','分からない'];
@@ -413,58 +369,58 @@ let all_num3 = list_all[2] //list_ntのうち3つめの番号
 
 //生成した乱数を配列に代入して表示したい要素（画像や説明文）を表示する--------
 
-$("#btn_st").on("click",function(){
-  $("#li_item_image_1").attr("src",object_itemlist[st_num1].image)
-  $("#li_item_title_1").text(object_itemlist[st_num1].title)
-  $("#li_item_detail_1").text(object_itemlist[st_num1].detail)
-  $("#li_item_image_2").attr("src",object_itemlist[st_num2].image)
-  $("#li_item_title_2").text(object_itemlist[st_num2].title)
-  $("#li_item_detail_2").text(object_itemlist[st_num2].detail)
-  $("#li_item_image_3").attr("src",object_itemlist[st_num3].image)
-  $("#li_item_title_3").text(object_itemlist[st_num3].title)
-  $("#li_item_detail_3").text(object_itemlist[st_num3].detail)
-}
-);
+// $("#btn_st").on("click",function(){
+//   $("#li_item_image_1").attr("src",object_itemlist[st_num1].image)
+//   $("#li_item_title_1").text(object_itemlist[st_num1].title)
+//   $("#li_item_detail_1").text(object_itemlist[st_num1].detail)
+//   $("#li_item_image_2").attr("src",object_itemlist[st_num2].image)
+//   $("#li_item_title_2").text(object_itemlist[st_num2].title)
+//   $("#li_item_detail_2").text(object_itemlist[st_num2].detail)
+//   $("#li_item_image_3").attr("src",object_itemlist[st_num3].image)
+//   $("#li_item_title_3").text(object_itemlist[st_num3].title)
+//   $("#li_item_detail_3").text(object_itemlist[st_num3].detail)
+// }
+// );
 
-$("#btn_wv").on("click",function(){
-  $("#li_item_image_1").attr("src",object_itemlist[wv_num1].image)
-  $("#li_item_title_1").text(object_itemlist[wv_num1].title)
-  $("#li_item_detail_1").text(object_itemlist[wv_num1].detail)
-  $("#li_item_image_2").attr("src",object_itemlist[wv_num2].image)
-  $("#li_item_title_2").text(object_itemlist[wv_num2].title)
-  $("#li_item_detail_2").text(object_itemlist[wv_num2].detail)
-  $("#li_item_image_3").attr("src",object_itemlist[wv_num3].image)
-  $("#li_item_title_3").text(object_itemlist[wv_num3].title)
-  $("#li_item_detail_3").text(object_itemlist[wv_num3].detail)
-}
-);
+// $("#btn_wv").on("click",function(){
+//   $("#li_item_image_1").attr("src",object_itemlist[wv_num1].image)
+//   $("#li_item_title_1").text(object_itemlist[wv_num1].title)
+//   $("#li_item_detail_1").text(object_itemlist[wv_num1].detail)
+//   $("#li_item_image_2").attr("src",object_itemlist[wv_num2].image)
+//   $("#li_item_title_2").text(object_itemlist[wv_num2].title)
+//   $("#li_item_detail_2").text(object_itemlist[wv_num2].detail)
+//   $("#li_item_image_3").attr("src",object_itemlist[wv_num3].image)
+//   $("#li_item_title_3").text(object_itemlist[wv_num3].title)
+//   $("#li_item_detail_3").text(object_itemlist[wv_num3].detail)
+// }
+// );
 
 
-$("#btn_nt").on("click",function(){
-  $("#li_item_image_1").attr("src",object_itemlist[nt_num1].image)
-  $("#li_item_title_1").text(object_itemlist[nt_num1].title)
-  $("#li_item_detail_1").text(object_itemlist[nt_num1].detail)
-  $("#li_item_image_2").attr("src",object_itemlist[nt_num2].image)
-  $("#li_item_title_2").text(object_itemlist[nt_num2].title)
-  $("#li_item_detail_2").text(object_itemlist[nt_num2].detail)
-  $("#li_item_image_3").attr("src",object_itemlist[nt_num3].image)
-  $("#li_item_title_3").text(object_itemlist[nt_num3].title)
-  $("#li_item_detail_3").text(object_itemlist[nt_num3].detail)
-}
-);
+// $("#btn_nt").on("click",function(){
+//   $("#li_item_image_1").attr("src",object_itemlist[nt_num1].image)
+//   $("#li_item_title_1").text(object_itemlist[nt_num1].title)
+//   $("#li_item_detail_1").text(object_itemlist[nt_num1].detail)
+//   $("#li_item_image_2").attr("src",object_itemlist[nt_num2].image)
+//   $("#li_item_title_2").text(object_itemlist[nt_num2].title)
+//   $("#li_item_detail_2").text(object_itemlist[nt_num2].detail)
+//   $("#li_item_image_3").attr("src",object_itemlist[nt_num3].image)
+//   $("#li_item_title_3").text(object_itemlist[nt_num3].title)
+//   $("#li_item_detail_3").text(object_itemlist[nt_num3].detail)
+// }
+// );
 
-$("#btn_unkown").on("click",function(){
-  $("#li_item_image_1").attr("src",object_itemlist[all_num1].image)
-  $("#li_item_title_1").text(object_itemlist[all_num1].title)
-  $("#li_item_detail_1").text(object_itemlist[all_num1].detail)
-  $("#li_item_image_2").attr("src",object_itemlist[all_num2].image)
-  $("#li_item_title_2").text(object_itemlist[all_num2].title)
-  $("#li_item_detail_2").text(object_itemlist[all_num2].detail)
-  $("#li_item_image_3").attr("src",object_itemlist[all_num3].image)
-  $("#li_item_title_3").text(object_itemlist[all_num3].title)
-  $("#li_item_detail_3").text(object_itemlist[all_num3].detail)
-}
-);
+// $("#btn_unkown").on("click",function(){
+//   $("#li_item_image_1").attr("src",object_itemlist[all_num1].image)
+//   $("#li_item_title_1").text(object_itemlist[all_num1].title)
+//   $("#li_item_detail_1").text(object_itemlist[all_num1].detail)
+//   $("#li_item_image_2").attr("src",object_itemlist[all_num2].image)
+//   $("#li_item_title_2").text(object_itemlist[all_num2].title)
+//   $("#li_item_detail_2").text(object_itemlist[all_num2].detail)
+//   $("#li_item_image_3").attr("src",object_itemlist[all_num3].image)
+//   $("#li_item_title_3").text(object_itemlist[all_num3].title)
+//   $("#li_item_detail_3").text(object_itemlist[all_num3].detail)
+// }
+// );
 
 
 // 共通処理
@@ -484,8 +440,8 @@ $("#btn_unkown").on("click",function(){
 
 
 
-var AAA = null;
-var BBB = [0,1,2,3];
+// var AAA = null;
+// var BBB = [0,1,2,3];
 
 
 
@@ -500,12 +456,14 @@ paramArray.push(param[0]);
 paramArray[param[0]] = param[1];
 }
  
+
+ // URLの一部が[id=Straight]の場合の処理
 if ( paramArray["id"] == "Straight") {
-  // alert("ストレートから来ました");
-  var AAA = 0;
-  //ストから来た人向け
+  // var AAA = 0;
   $(document).ready(function () {
     console.log("ready!");
+    $(".kokkaku_type_eng").text("ストレート")
+
     $("#li_item_image_1").attr("src",object_itemlist[st_num1].image)
     $("#li_item_title_1").text(object_itemlist[st_num1].title)
     $("#li_item_detail_1").text(object_itemlist[st_num1].detail)
@@ -516,13 +474,13 @@ if ( paramArray["id"] == "Straight") {
     $("#li_item_title_3").text(object_itemlist[st_num3].title)
     $("#li_item_detail_3").text(object_itemlist[st_num3].detail)
   });
-// URLの一部が[id=Straight]の場合の処理
-} else if ( paramArray["id"] == "Wave") {
-  // alert("WVから来ました");
-  var AAA = 1;
 
-//WVから来た人向け
+// URLの一部が[id=Wave]の場合の処理
+} else if ( paramArray["id"] == "Wave") {
+  // var AAA = 1;
   $(document).ready(function () {
+    $(".kokkaku_type_eng").text("ウェーブ")
+
     $("#li_item_image_1").attr("src",object_itemlist[wv_num1].image)
     $("#li_item_title_1").text(object_itemlist[wv_num1].title)
     $("#li_item_detail_1").text(object_itemlist[wv_num1].detail)
@@ -535,13 +493,12 @@ if ( paramArray["id"] == "Straight") {
     console.log("ready!");
   });
 
-// URLの一部が[id=Wave]の場合の処理
+// URLの一部が[id=Natural]の場合の処理
 } else if ( paramArray["id"] == "Natural") {
-  // alert("NTから来ました");
-  var AAA = 2;
-  //NTから来た人向け
+  // var AAA = 2;
   $(document).ready(function () {
-  console.log("ready!");
+  $(".kokkaku_type_eng").text("ナチュラル")
+
   $("#li_item_image_1").attr("src",object_itemlist[nt_num1].image)
   $("#li_item_title_1").text(object_itemlist[nt_num1].title)
   $("#li_item_detail_1").text(object_itemlist[nt_num1].detail)
@@ -552,14 +509,13 @@ if ( paramArray["id"] == "Straight") {
   $("#li_item_title_3").text(object_itemlist[nt_num3].title)
   $("#li_item_detail_3").text(object_itemlist[nt_num3].detail)
 });
-  // URLの一部が[id=Wave]の場合の処理
-  
+ 
+  // URLの一部が[id=unknown]の場合の処理
 } else if ( paramArray["id"] == "unknown") {
-  // alert("わからないから来ました");
-  var AAA = 3;
-  //UNから来た人向け
+  // var AAA = 3;
   $(document).ready(function () {
-    console.log("ready!");
+    $(".kokkaku_type_eng").text("未診断")
+
     $("#li_item_image_1").attr("src",object_itemlist[all_num1].image)
     $("#li_item_title_1").text(object_itemlist[all_num1].title)
     $("#li_item_detail_1").text(object_itemlist[all_num1].detail)
@@ -569,20 +525,9 @@ if ( paramArray["id"] == "Straight") {
     $("#li_item_image_3").attr("src",object_itemlist[all_num3].image)
     $("#li_item_title_3").text(object_itemlist[all_num3].title)
     $("#li_item_detail_3").text(object_itemlist[all_num3].detail)
-    
   });
-  // URLの一部が[id=unknown]の場合の処理
+
 };
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -627,24 +572,6 @@ if ( paramArray["id"] == "Straight") {
 
 
 
-    // $("#nanigaderukana").text(""); //なにがでるかなを消す
-    // if (pc_random === 0) {
-    //     console.log("PCの手：グー");
-    //     $("#pc_hands").text(str_pc_hands[0]);
-    //     pc = 0; //ハコに選んだ選択肢にひもづく数値をいれてあげる処理
-    //     $("#gazou_kirikae").attr("src","img/pc_gu.png"); //PCハンズの画像表示切り替え
-    // } else if (pc_random === 1) {
-    //     console.log("PCの手：チョキ");
-    //     $("#pc_hands").text(str_pc_hands[1]);
-    //     pc = 1; //ハコに選んだ選択肢にひもづく数値をいれてあげる処理
-    //     $("#gazou_kirikae").attr("src","img/pc_choki.png"); //PCハンズの画像表示切り替え
-    // } else if (pc_random === 2) {
-    //     console.log("PCの手：パー");
-    //     $("#pc_hands").text(str_pc_hands[2]);
-    //     pc = 2; //ハコに選んだ選択肢にひもづく数値をいれてあげる処理
-    //     $("#gazou_kirikae").attr("src","img/pc_par.png"); //PCハンズの画像表示切り替え
-    // } 
-// } );
 
 
 
