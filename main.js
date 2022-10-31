@@ -72,6 +72,7 @@ let E = ['img/girl_straight.png', 'img/girl_wave.png', 'img/girl_natural.png','�
 
 
 
+
 $(".kokkaku_btn").on('click', function(){
   console.log(C[A]);
   $("#kokkaku_type_jpn").text(D[A]); //日本語表記したいので配列Dを使用
@@ -103,12 +104,6 @@ $("#recommend_item").on('click', function(){
   console.log(C[A]);
 });
 
-$(function(){
-$("#recommend_item").on('click', function(){
-  console.log(C[A]);
-  $(".kokkaku_type_eng").text(C[A]); //英語表記したいので配列Cを使用
-});
-});
 
 
 
