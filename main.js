@@ -66,7 +66,7 @@ $("#btn_unkown").on('click', function(){
 
 //以下押されたボタンの番号により画像と文字を出し分け
 
-let C = ['Straight', 'Wave', 'Natural','分からない'];
+let C = ['Straight', 'Wave', 'Natural','unknown'];
 let D = ['ストレート', 'ウェーブ', 'ナチュラル','分からない'];
 let E = ['img/girl_straight.png', 'img/girl_wave.png', 'img/girl_natural.png','分からない'];
 
@@ -95,25 +95,34 @@ let F = ['https://www.instagram.com/recouture_official/guide/straight/1796420752
   window.location.href = (F[A]); //リンク遷移切替したいので配列Fを使用
 });
 
+
+
+
+
 //ボタン② 骨格別のオススメ服３枚セレンディピティ
 //リンク先は固定URLにして中身の出し分けをJQで設定
 
 
+//これは動く★けどパラメーターが取得できない
+// $("#recommend_item").on('click', function(){
+//   window.location.href = ("link_2/index.html"); //下位階層へのリンク遷移
+//   console.log(C[A]);
+// });
+
+
+//パラメーターを取得するには
+
 $("#recommend_item").on('click', function(){
-  window.location.href = ("link_2/index.html"); //下位階層へのリンク遷移
   console.log(C[A]);
+  console.log(`link_2/index.html?id=${C[A]}`);
+  let param = "link_2/index.html?id=" //変数paramにパラメーターの頭文字を固定
+  console.log(`${param}${C[A]}`); //パラメーターを出力
+  window.location.href = (`link_2/index.html?id=${C[A]}`); //下位階層へのリンク遷移＋末尾の?id以下でパラメーターを付与
+  // window.location.href = (`${param}${C[A]}`); //下位階層へのリンク遷移＋末尾の?id以下でパラメーターを付与
 });
 
 
-
-
-
-
-
-
-
-
-
+//★★パラメーターをつけてリンクをとばすところまでできた！！！すごい！
 
 
 
