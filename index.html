@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>骨格じゃんけん</title>
+  <title>似合わせ診断</title>
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="style.css">
 
@@ -20,10 +20,7 @@
     })(document);
   </script>
 
-  <!-- JQueryが先!! -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <!-- 次にJS! -->
-  <script src="js.js"></script>
+
 
 
 
@@ -82,15 +79,15 @@
           <div class="modal_btn">
 
             <button class="recommend_btn" id="recommend_design">
-              骨格<span id="kokkaku_type_eng">ここに表示</span>さんに似合う服はこちら
+              骨格<span class="kokkaku_type_eng">ここに表示</span>さんに似合う服はこちら
             </button>
         
             <button class="recommend_btn" id="recommend_item">
-              骨格<span id="kokkaku_type_eng">ここに表示</span>さんにオススメの３枚はこれ！
+              骨格<span class="kokkaku_type_eng">ここに表示</span>さんにオススメ！厳選３着はこれ！
             </button>
         
             <button class="recommend_btn" id="recommend_custom">
-              骨格<span id="kokkaku_type_eng">ここに表示</span>さんにオススメのカスタマイズ
+              骨格<span class="kokkaku_type_eng">ここに表示</span>さんにオススメのカスタマイズ
             </button>
 
           </div>
@@ -126,7 +123,10 @@
   
 
 
-
+  <!-- JQueryが先!! -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- 次にJS! -->
+  <script src="main.js"></script>
 
 
 

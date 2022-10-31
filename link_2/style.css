@@ -1,0 +1,63 @@
+/* -------body--------- */
+
+body{
+  background-color:#fff;
+  margin: 0;
+  /* -webkit-appearance: none; */
+  font-family:'playfair-display','mr-eaves-modern','ryo-gothic-plusn',sans-serif,serif;
+  overflow-wrap: break-word;
+}
+
+
+/* -------header--------- */
+
+
+
+
+.header_1{
+  height: 40px;
+  padding: 8px;
+  background-color: rgb(248,248,248);
+  border-bottom: solid 1px rgb(229,231,235);
+  text-align: center;
+  max-width: 100%;
+}
+
+.header_logo{
+  height: 40px;
+}
+
+.header_2{
+  height: 36px;
+  padding: 8px;
+  background-color: #fff;
+  border-bottom: solid 1px rgb(229,231,235);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'ryo-gothic-plusn';
+  letter-spacing: 0.1em;
+}
+
+
+/* -------main--------- */
+
+.main{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 80vh;
+  letter-spacing: 0.1em;
+}
+
+
+.main P{
+  color: #E88D80;
+  font-size: 1.2rem;
+  margin-bottom: 8vh;
+  font-family: 'ryo-gothic-plusn';
+}
+
+/* ここまでは親CSSと共通（コピペ）→次はコンポーネント化しておきたい */

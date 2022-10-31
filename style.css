@@ -126,6 +126,7 @@ body{
   max-width: 500px;
   width: 84vw;
   height: 80vh;
+  border-radius: 4%;
 }
 
 .modal_content img{
