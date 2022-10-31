@@ -10,8 +10,6 @@ let BB = [0,1,2,3]; //共通化するために配列BBに変数AAを入れる
 
 
 
-
-
 $(function(){
     $(".recommend_btn").click(function(){
       console.log(500);
@@ -20,6 +18,16 @@ $(function(){
 });
 
 
-"/ #categories-2 ul li"
+$(function(){
+
+  
+  $(".recommend_btn").click(function(){
+    console.log(500);
+    $("#idLoadLlink").load("../index.html #btn_st");
+  });
+});
+
+
+
 
 
