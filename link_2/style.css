@@ -53,21 +53,30 @@ body{
 }
 
 
-.main p{
+
+/* .main p{
   font-family: 'ryo-gothic-plusn';
-}
+} */
 
 /* ここまでは親CSSと共通（コピペ）→次はコンポーネント化しておきたい */
 
 .main_title{
-  color: #E88D80;
-  font-size: 4vw;
+  color: #383838;
+  font-size: 1.2rem;
+  margin: 2vh 0 2.4vh;
+  font-family: 'playfair-display';
+  letter-spacing: 0.25rem;
 }
 
+.subtitle{
+  margin-top:0 ;
+  font-size: 0.8rem;
+}
 
-
-.main_title{
-  margin: 0 0 2vh;
+.bar{
+  width: 24vw;
+  border-bottom: solid 1px #383838;
+  margin: 0 0 3.6vh;
 }
 
 
@@ -85,22 +94,35 @@ body{
 
 .li_item{
   width: 45vw;
+  display: flex;
+  align-items: center;
+}
+
+.item_text{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .li_item_title{
-  display: table-cell;
-  width: 45vw;
+  display: table-cell; */
+  width: 44vw;
   height: 4vh;
   margin-bottom: 0;
-  vertical-align: middle;
-  font-size: 1rem;
+  padding: 0 0 0 1vw;
+  line-height: 1.2;
+  text-align: left;
+  font-size: 0.8rem;
+  font-family: 'ryo-gothic-plusn';
 }
 
 .li_item_detail{
   text-align: left;
   padding: 1vh 1vw;
-  font-size: 0.8rem;
-  letter-spacing: 0.2em;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  line-height: 1.6;
+  font-family: 'ryo-gothic-plusn';
 }
 
 .li_item_img{

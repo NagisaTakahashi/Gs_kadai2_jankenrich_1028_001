@@ -83,36 +83,36 @@
 // var object[n] = {"image":"null","title":"null","detail":"null"};
 
 var object_itemlist= [
- {"image":'img/st_1.jpeg',"title":"スト1のtitleです","detail":"スト1のdetailです"},
- {"image":'img/st_2.jpeg',"title":"スト2のtitleです","detail":"スト2のdetailです"},
- {"image":'img/st_3.jpeg',"title":"スト3のtitleです","detail":"スト3のdetailです"},
- {"image":'img/st_4.jpeg',"title":"スト4のtitleです","detail":"スト4のdetailです"},
- {"image":'img/st_5.jpeg',"title":"スト5のtitleです","detail":"スト5のdetailです"},
- {"image":'img/st_6.jpeg',"title":"スト6のtitleです","detail":"スト6のdetailです"},
- {"image":'img/st_7.jpeg',"title":"スト7のtitleです","detail":"スト7のdetailです"},
- {"image":'img/st_8.jpeg',"title":"スト8のtitleです","detail":"スト8のdetailです"},
- {"image":'img/st_9.jpeg',"title":"スト9のtitleです","detail":"スト9のdetailです"},
- {"image":'img/st_10.jpeg',"title":"スト10のtitleです","detail":"スト10のdetailです"},
- {"image":'img/wv_1.jpeg',"title":"ウエーブ1のtitleです","detail":"ウエーブ1のdetailです"},
- {"image":'img/wv_2.jpeg',"title":"ウエーブ2のtitleです","detail":"ウエーブ2のdetailです"},
- {"image":'img/wv_3.jpeg',"title":"ウエーブ3のtitleです","detail":"ウエーブ3のdetailです"},
- {"image":'img/wv_4.jpeg',"title":"ウエーブ4のtitleです","detail":"ウエーブ4のdetailです"},
- {"image":'img/wv_5.jpeg',"title":"ウエーブ5のtitleです","detail":"ウエーブ5のdetailです"},
- {"image":'img/wv_6.jpeg',"title":"ウエーブ6のtitleです","detail":"ウエーブ6のdetailです"},
- {"image":'img/wv_7.jpeg',"title":"ウエーブ7のtitleです","detail":"ウエーブ7のdetailです"},
- {"image":'img/wv_8.jpeg',"title":"ウエーブ8のtitleです","detail":"ウエーブ8のdetailです"},
- {"image":'img/wv_9.jpeg',"title":"ウエーブ9のtitleです","detail":"ウエーブ9のdetailです"},
- {"image":'img/wv_10.jpeg',"title":"ウエーブ10のtitleです","detail":"ウエーブ10のdetailです"},
- {"image":'img/nt_1.jpeg',"title":"ナチュラル1のtitleです","detail":"ナチュラル1のdetailです"},
- {"image":'img/nt_2.jpeg',"title":"ナチュラル2のtitleです","detail":"ナチュラル2のdetailです"},
- {"image":'img/nt_3.jpeg',"title":"ナチュラル3のtitleです","detail":"ナチュラル3のdetailです"},
- {"image":'img/nt_4.jpeg',"title":"ナチュラル4のtitleです","detail":"ナチュラル4のdetailです"},
- {"image":'img/nt_5.jpeg',"title":"ナチュラル5のtitleです","detail":"ナチュラル5のdetailです"},
- {"image":'img/nt_6.jpeg',"title":"ナチュラル6のtitleです","detail":"ナチュラル6のdetailです"},
- {"image":'img/nt_7.jpeg',"title":"ナチュラル7のtitleです","detail":"ナチュラル7のdetailです"},
- {"image":'img/nt_8.jpeg',"title":"ナチュラル8のtitleです","detail":"ナチュラル8のdetailです"},
- {"image":'img/nt_9.jpeg',"title":"ナチュラル9のtitleです","detail":"ナチュラル9のdetailです"},
- {"image":'img/nt_10.jpeg',"title":"ナチュラル10のtitleです","detail":"ナチュラル10のdetailです"}
+ {"image":'img/st_1.jpeg',"title":"上品見え2wayキャミワンピース","detail":"胸元のVカットと上品見えする細ストライプ柄がストレートタイプにぴったりの1着。華奢なストラップや深めのスリットなど、ドキッとする女性らしさも演出。ストレッチ性がありながらも薄すぎない生地感だから、レイヤードしてももたつかず◎。"},
+ {"image":'img/st_2.jpeg',"title":"トレンドライクハーフパンツ","detail":"トレンドのハーフパンツをストレートさんが取り入れるなら、こちらのラインナップ。カジュアル見えする丈ながらも、センタープレスが入りかっちり見えるのがポイントです。トレンドムードたっぷりのデザインで快適にはける高機能素材に注目。"},
+ {"image":'img/st_3.jpeg',"title":"クリアツイルコクーンパンツ","detail":"ベーシックで使い回しの効くテーパードパンツ。広がりすぎないコクーンシルエットやフェイクレザーで、定番ながらも遊びを加えるのがポイントです。NOBLEのジョガーパンツは次のシーズンを見据えたフェイクレザーをレコメンド。見た目に対して軽くて柔らかな素材の、リラックスした履き心地が◎。"},
+ {"image":'img/st_4.jpeg',"title":"センタープレスドビーパンツ","detail":"センタープレス入りで脚にフィットするフレアシルエットは、まさにストレートタイプのための美脚パンツ！トップス次第でオン＆オフともに活躍すること間違いなしです。ドライな肌触りの清涼素材なら、真夏の今からヘビロテできそう。"},
+ {"image":'img/st_5.jpeg',"title":"ローフリルスリーブワンピース","detail":"ダボっとした着こなしにまとまりがちな長袖ワンピースはスタイルにメリハリをつけて。てろっとした素材のVネック＆コクーンシルエットで、ボディラインに沿ったスッキリ感を演出。１枚で上品にまとまるから、オンにもオフにも活躍すること間違いなし。"},
+ {"image":'img/st_6.jpeg',"title":"絶妙バランスフレアドレス","detail":"シンプルなフレアワンピースは、トレンド感もありつつ広がりすぎない絶妙なバランスがおすすめ。スッキリしたトップに対して裾がエレガントに広がるシルエットだから、デイリーコーデを素敵に格上げしてくれます。"},
+ {"image":'img/st_7.jpeg',"title":"ウェザーリバーシブルステンカラーコート","detail":"ステンカラーコートは、袖からのぞくチェック柄に注目。ストレートタイプはどうしてもデザインがシンプルになりがちなので、ワンポイントで遊びを加えるのもおすすめです。ハリのある素材が上質感もあり、チェック柄をメインにも着られるリバーシブル仕様なのが嬉しい。"},
+ {"image":'img/st_8.jpeg',"title":"フーデットブルゾン","detail":"ボリューミーなブルゾンは着膨れしやすいストレートタイプ。なるべくボリュームをおさえたIラインで、表面のデザインも少なめの方がすっきりと好印象に。気軽に羽織れて、大人の品も漂うゴールドのパーツがキレイめなムードもアップ。"},
+ {"image":'img/st_9.jpeg',"title":"コクーンミドルコート","detail":"今季おさえておきたいミドル丈のアウターは、シンプルなコクーンコートをチョイス。ベーシックなデザインをおさえつつもドロップショルダーなど、トレンド感のあるサイジングがポイントです。インナーを選ばないノーカラー仕立てなのですっきり着られておすすめ。"},
+ {"image":'img/st_10.jpeg',"title":"メタルボタンダブルブレストジャケット","detail":"シックなコーデの似合うストレートタイプの鉄板アイテムであるジャケット。Vゾーンが広めで、オーバーサイズ過ぎないすっきりとしたIラインシルエットがおすすめです。この秋冬トレンドのトラッドムードに最適な、金ボタンのネイビーブレザーをカジュアルに着こなすのが気分。"},
+ {"image":'img/wv_1.jpeg',"title":"華やかカラーの華奢見えワンピ","detail":"ウェーブタイプの華奢さを引き立ててくれるキャミワンピース。こっくり秋カラーのサテンワンピースなら、今からロングシーズン活躍します。1枚で着るときはアクセサリーなどで首元にポイントをおいて。薄手のインナーとのレイヤードスタイルもおすすめです。"},
+ {"image":'img/wv_2.jpeg',"title":"こっくり秋カラーのサテンワンピース","detail":"ウェーブタイプの華奢さを引き立ててくれるキャミワンピース。こっくり秋カラーのサテンワンピースなら、今からロングシーズン活躍します。1枚で着るときはアクセサリーなどで首元にポイントをおいて。薄手のインナーとのレイヤードスタイルもおすすめです。"},
+ {"image":'img/wv_3.jpeg',"title":"Dramaticな切替ワンピース","detail":"ストンと落ち感のあるシンプルなキャミワンピはもちろん、ギャザーで切り替えたドレッシーなワンピースも◎。分厚くなりすぎない薄手の素材感がポイントです。ロゴTシャツやスニーカーなど、カジュアルにハズしたコーデにまとめて。"},
+ {"image":'img/wv_4.jpeg',"title":"落ち感ソフトレザーワンピ","detail":"ほんのりツヤ感のあるフェイクスエードも、ウェーブタイプがお得意の素材の1つ。デコルテの開きが控えめなデザインが今どき。自宅で洗えるイージーケアなのも嬉しいポイント。シンプルトップスを重ねるだけでワンランク上の着こなしに。"},
+ {"image":'img/wv_5.jpeg',"title":"マーメイドリブニットワンピ","detail":"身体にフィットするニットワンピースはウェーブタイプだからこそ着こなせるアイテム。裾にかけて広がるフレアやマーメイドシルエットが、さらに女性らしさを引き立ててくれます。"},
+ {"image":'img/wv_6.jpeg',"title":"落ち感フリルシャツワンピ","detail":"かっちり見えするシャツワンピースも、テロっとした素材感と襟のフリルならウェーブさんにお似合い。オケージョン対応にもぴったりなクラシカルなブラックワンピースは、フェミニンすぎるアイテムが苦手な方にもおすすめです。"},
+ {"image":'img/wv_7.jpeg',"title":"新鮮ツイードポプリンパンツ","detail":"デニムなどのカジュアル素材の多いショート・ハーフパンツですが、ウェーブさんにはツイードなどの華やかな素材がおすすめ。ジャケットとのセットアップスタイルは、ウェーブタイプだからこそ似合うコーデです。一気に秋のムードを醸せるショートパンツは、カジュアル合わせで遊びを効かせても◎。"},
+ {"image":'img/wv_8.jpeg',"title":"モチーフプリントクラシックパンツ","detail":"軽い素材のイージーパンツがウェーブタイプにおすすめ。柄は小さめでコントラストの弱いものを選んで。オリジナルプリントパンツは、コーデに馴染みの良い小ぶりな柄。シルクのような光沢が、上質感も演出してくれます。"},
+ {"image":'img/wv_9.jpeg',"title":"クリンクルチェックイージーパンツ","detail":"ウェーブタイプらしいすっきりとしたシルエットがポイント。レディにもカジュアルにも着れるギンガムチェックがウェーブタイプによく似合います。サイドのパイピングがアクセントのイージーパンツで、大人可愛いコーデを楽しんで。"},
+ {"image":'img/wv_10.jpeg',"title":"大人可愛いスッキリ見えテーパード","detail":"テーパードパンツは足首をすっきりと見せてくれるおすすめのシルエット。ウェーブタイプにはかっちりとしたデザインより、ストレッチが効いた柔らかい素材がおすすめです。ウエストゴムなのも嬉しいポイント。"},
+ {"image":'img/nt_1.jpeg',"title":"ボタンジレワンピ","detail":"ナチュラル1のdetailです"},
+ {"image":'img/nt_2.jpeg',"title":"64クロスタックフレアスカート","detail":"ナチュラル2のdetailです"},
+ {"image":'img/nt_3.jpeg',"title":"ダブルブレスドツーピース","detail":"ナチュラル3のdetailです"},
+ {"image":'img/nt_4.jpeg',"title":"＆NAVY コットンナイロンオーバーラップコート","detail":"ナチュラル4のdetailです"},
+ {"image":'img/nt_5.jpeg',"title":"ホワイトツイードジャケット","detail":"ナチュラル5のdetailです"},
+ {"image":'img/nt_6.jpeg',"title":"ハイウエストチノ","detail":"ナチュラル6のdetailです"},
+ {"image":'img/nt_7.jpeg',"title":"タックバギーデニム","detail":"ナチュラル7のdetailです"},
+ {"image":'img/nt_8.jpeg',"title":"カルゼオーバーワンピ","detail":"ナチュラル8のdetailです"},
+ {"image":'img/nt_9.jpeg',"title":"ステンスタンドネックブルゾン","detail":"ナチュラル9のdetailです"},
+ {"image":'img/nt_10.jpeg',"title":"デシンマキシティアードワンピ","detail":"ナチュラル10のdetailです"}
 ];
 
 // console.log(object_itemlist[10].title);
@@ -440,8 +440,11 @@ let all_num3 = list_all[2] //list_ntのうち3つめの番号
 
 
 
-// var AAA = null;
-// var BBB = [0,1,2,3];
+var AAA = null;
+var BBB = [0,1,2,3];
+let C = ['Straight', 'Wave', 'Natural','分からない'];
+let D = ['ストレート', 'ウェーブ', 'ナチュラル','分からない'];
+let E = ['img/girl_straight.png', 'img/girl_wave.png', 'img/girl_natural.png','分からない'];
 
 
 
@@ -459,10 +462,10 @@ paramArray[param[0]] = param[1];
 
  // URLの一部が[id=Straight]の場合の処理
 if ( paramArray["id"] == "Straight") {
-  // var AAA = 0;
+  var AA = 0;
   $(document).ready(function () {
     console.log("ready!");
-    $(".kokkaku_type_eng").text("ストレート")
+    $(".kokkaku_type_eng").text(C[AA])
 
     $("#li_item_image_1").attr("src",object_itemlist[st_num1].image)
     $("#li_item_title_1").text(object_itemlist[st_num1].title)
@@ -477,9 +480,9 @@ if ( paramArray["id"] == "Straight") {
 
 // URLの一部が[id=Wave]の場合の処理
 } else if ( paramArray["id"] == "Wave") {
-  // var AAA = 1;
+  var AA = 1;
   $(document).ready(function () {
-    $(".kokkaku_type_eng").text("ウェーブ")
+    $(".kokkaku_type_eng").text(C[AA])
 
     $("#li_item_image_1").attr("src",object_itemlist[wv_num1].image)
     $("#li_item_title_1").text(object_itemlist[wv_num1].title)
@@ -495,9 +498,9 @@ if ( paramArray["id"] == "Straight") {
 
 // URLの一部が[id=Natural]の場合の処理
 } else if ( paramArray["id"] == "Natural") {
-  // var AAA = 2;
+  var AA = 2;
   $(document).ready(function () {
-  $(".kokkaku_type_eng").text("ナチュラル")
+  $(".kokkaku_type_eng").text(C[AA])
 
   $("#li_item_image_1").attr("src",object_itemlist[nt_num1].image)
   $("#li_item_title_1").text(object_itemlist[nt_num1].title)
@@ -512,7 +515,7 @@ if ( paramArray["id"] == "Straight") {
  
   // URLの一部が[id=unknown]の場合の処理
 } else if ( paramArray["id"] == "unknown") {
-  // var AAA = 3;
+  var AA = 3;
   $(document).ready(function () {
     $(".kokkaku_type_eng").text("未診断")
 
