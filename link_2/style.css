@@ -132,3 +132,37 @@ body{
   padding: 0 1vw 1vh;
   box-sizing: border-box;
 }
+
+/* お気に入りボタン設置のための土台設定 */
+.fav{
+  position: relative;
+}
+
+/* お気に入りボタンの初期位置定義と初期設定 */
+.fav_test{
+  width: 2vh;
+  position: absolute;
+  right: 2.8vw;
+  bottom: 1.8vh;
+  fill:none;
+  stroke: #060606;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+/* お気に入りボタンがクリックされたときの色変更 */
+/* .li_item_fav:hover{
+  filter: invert(20%) sepia(96%) saturate(5339%) hue-rotate(332deg) brightness(100%) contrast(98%);
+} */
+
+/* お気に入りボタンがクリックされたときの色変更 */
+.fav_test:hover{
+  fill:#fc125d;
+  stroke: #fc125d;
+}
+
+
+
+
+
