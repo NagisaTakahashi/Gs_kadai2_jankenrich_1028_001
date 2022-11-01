@@ -51,14 +51,15 @@ body{
   text-align: center;
   height: 80vh;
   letter-spacing: 0.1em;
-}
-
-
-.main P{
   color: #E88D80;
   font-size: 1.2rem;
   margin-bottom: 8vh;
   font-family: 'ryo-gothic-plusn';
+}
+
+
+.main_title{
+  margin-bottom: 8vh;
 }
 
 
@@ -70,7 +71,7 @@ body{
   width: 80vw;
   height: 8vh;
   border-radius: 4vh;
-  margin-bottom: 6vh;
+  margin-bottom: 4vh;
   font-family: 'playfair-display','ryo-gothic-plusn';
   letter-spacing: 0.1em;
 }
@@ -107,6 +108,7 @@ body{
   opacity: 50%;
 }
 
+
 /* モーダル部分の上下中央配置 */
 .modal_body{
   display: flex;
@@ -126,18 +128,21 @@ body{
   max-width: 500px;
   width: 84vw;
   height: 80vh;
-  border-radius: 4%;
+  border-radius: 20px;
+  display: flex;
 }
+
 
 .modal_content img{
   width: 70%;
+  
 }
 
 .modal_text{
-  margin: 6% 0;
+  margin-top: 6%;
 }
 
-.modal_content p {
+.modal_message p {
   font-size:0.8rem;
   margin-bottom: 4%;
 }
@@ -157,8 +162,23 @@ body{
   cursor: pointer;
 }
 
-/* モダール内のリンク先 */
 
+/* .modal_center{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+} */
+
+/* モダール内のボタン上のサブコメント */
+
+.sub{
+  margin: 0;
+  padding: 2vh 0 0vh 0;
+  font-size: 0.6rem;
+}
+
+/* モダール内のボタン＆リンク先 */
 
 
 .recommend_btn{

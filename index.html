@@ -43,7 +43,7 @@
 
   <main class="main">
 
-    <p>＼ あなたの骨格を選んでね ／</p>
+    <p class="main_title">＼ あなたの骨格を選んでね ／</p>
 
     <div class="kokkaku_btn_wrapper">
       <button id="btn_st" class="kokkaku_btn modal_open">Straight</button>
@@ -66,29 +66,45 @@
 
           <div class="modal_close">×</div>
 
-          <img src="" alt="kokkaku_img" id="kokkaku_card_img">
+          <div class="modal_center">
 
-          <div class="modal_text">
+            <img src="" alt="kokkaku_img" id="kokkaku_card_img">
 
-            <p>あなたが選んだ骨格は「<span id="kokkaku_type_jpn">ここに表示</span>」です✨</p>
             
-            <p>Recoutureのおすすめを見てみよう♥</p>
 
-          </div>
+            <div class="modal_text">
 
-          <div class="modal_btn">
+              <div class="modal_message">
+                <p>あなたが選んだ骨格は「<span class="kokkaku_type_jpn">ここに表示</span>」です✨</p>
+                
+                <p id="message">Recoutureのおすすめを見てみよう♥</p>
+              </div>
 
-            <button class="recommend_btn" id="recommend_design">
-              骨格<span class="kokkaku_type_eng">ここに表示</span>さんに似合う服はこちら
-            </button>
-        
-            <button class="recommend_btn" id="recommend_item">
-              骨格<span class="kokkaku_type_eng">ここに表示</span>さんにオススメ！厳選３着はこれ！
-            </button>
-        
-            <button class="recommend_btn" id="recommend_custom">
-              骨格<span class="kokkaku_type_eng">ここに表示</span>さんにオススメのカスタマイズ
-            </button>
+            </div>
+
+            <div class="modal_btn">
+
+           
+              <p class="sub" id="sub_1">＼まずは定番から！／</p>
+            
+              <button class="recommend_btn" id="recommend_design">
+                骨格<span class="kokkaku_type_eng">ここに表示</span>さんに似合う服はこちら
+              </button>
+
+              <p class="sub" id="sub_2">新しい自分に出会おう！セレンディピティなら
+              </p>
+
+              <button class="recommend_btn" id="recommend_item">
+                骨格<span class="kokkaku_type_eng">ここに表示</span>さんにオススメ！厳選３着
+              </button>
+
+              <p class="sub" id="sub_3">理想を叶える！自分好みにカスタマイズ</p>
+          
+              <button class="recommend_btn" id="recommend_custom">
+                骨格<span class="kokkaku_type_eng">ここに表示</span>さんオススメカスタマイズ
+              </button>
+
+            </div>
 
           </div>
 

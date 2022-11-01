@@ -83,7 +83,7 @@ var object_itemlist= [
     //2.B-3.取ってきたパラメーターの値ごとにif分岐で文字を表示するためのハコ
 
     var X = null; //文字を表示するための箱
-    let Y = ['Straight', 'Wave', 'Natural','分からない']; //文字を表示するための配列
+    let Y = ['Straight', 'Wave', 'Natural','Unknown']; //文字を表示するための配列
 
     //2-B-4.取ってきたパラメーターの値ごとにif分岐で数字を割り付けるための箱
 
