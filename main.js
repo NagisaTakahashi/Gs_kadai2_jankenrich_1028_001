@@ -85,6 +85,7 @@ $(".kokkaku_btn").on('click', function(){
 
 $(".kokkaku_btn").on('click', function(){
   console.log(C[A]);
+  $("#message").text("Recoutureのおすすめを見てみよう♥"); //案内文内をもとに戻す
   $("#sub_1").text("＼まずは定番から！／"); //案内文内をもとに戻す
   $("#recommend_design").text(`骨格${C[A]}さんに似合う服はこちら`); //ボタン文章をもとに戻す
   $("#sub_2").text("新しい自分に出会おう！セレンディピティなら"); //案内文内をもとに戻す
