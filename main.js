@@ -71,7 +71,7 @@ let D = ['ストレート', 'ウェーブ', 'ナチュラル','分からない']
 let E = ['img/girl_straight.png', 'img/girl_wave.png', 'img/girl_natural.png','img/girl_unknown.png'];
 
 
-
+// 出し分け用の初期設定
 
 $(".kokkaku_btn").on('click', function(){
   console.log(C[A]);
@@ -81,10 +81,31 @@ $(".kokkaku_btn").on('click', function(){
 });
 
 
-//骨格「わからない」が選択されたときの例外処理
-  //備忘メモ：単純に#btn_unkownのみを指定して例外処理してしまうと、1回unknownが押されると後の処理はSTでもNTでもunkwounの表示が発火してしまう???
+//出し分け用の例外処理ボタン対応時の処理（上書きで再指定）
 
-  // ①案内文変更
+$(".kokkaku_btn").on('click', function(){
+  console.log(C[A]);
+  $("#sub_1").text("＼まずは定番から！／"); //案内文内をもとに戻す
+  $("#recommend_design").text(`骨格${C[A]}さんに似合う服はこちら`); //ボタン文章をもとに戻す
+  $("#sub_2").text("新しい自分に出会おう！セレンディピティなら"); //案内文内をもとに戻す
+  $("#recommend_item").text(`骨格${C[A]}さんにオススメ！厳選３着`); //ボタン文章をもとに戻す
+  // $("#sub_3").text("理想を叶える！自分好みにカスタマイズ"); //案内文内をもとに戻す
+  // $("#recommend_item").text(`骨格${C[A]}さんにオススメカスタマイズ`); //ボタン文章をもとに戻す
+
+  //骨格わからないを押した人対策：ボタン③の非表示を戻る
+  $("#recommend_custom").css('display', 'inline-block'); //再表示
+  $("#sub_3").css('display', 'inline-block'); //再表示
+
+});
+
+
+
+
+//骨格「わからない」が選択されたときの例外処理
+  //【！備忘メモ】：単純に#btn_unkownのみを指定してinnerHTMLで上書きしてしまうと、それによりHTMLの内容自体を書き換えにいってしまうので、「わからない」を押した後に「ストレート」とかを押しても「分からない」の内容が表示されてしまう！！（書き換えたものを表示しているだけになってしまう）ので、ひとつ上の塊で、再度読み込み処理を追加しました。
+ 
+
+  // 案内文変更
 
 $("#btn_unkown").on('click', function(){
   console.log(C[A]);
@@ -98,8 +119,9 @@ $("#btn_unkown").on('click', function(){
   $("#recommend_item").text("偶然の出会いを楽しむ♥"); //骨格●●に似合う〜という表現を削除
 
   //ボタン③は非表示にする
-  $("#recommend_custom").css('display', 'none'); //非表示
   $("#sub_3").css('display', 'none'); //非表示
+  $("#recommend_custom").css('display', 'none'); //非表示
+ 
 
 });
 
