@@ -82,8 +82,10 @@ $(".kokkaku_btn").on('click', function(){
 
 
 //骨格「わからない」が選択されたときの例外処理
+  //備忘メモ：単純に#btn_unkownのみを指定して例外処理してしまうと、1回unknownが押されると後の処理はSTでもNTでもunkwounの表示が発火してしまう???
 
-// ①案内文変更
+  // ①案内文変更
+
 $("#btn_unkown").on('click', function(){
   console.log(C[A]);
   $("#message").text("骨格診断から始めてみよう♥"); //案内文内を骨格未診断のみ変更
