@@ -1,86 +1,11 @@
 
-// alert(1111);
+// 0. ひも付きチェック
+  // alert(1111);
 
 
+// 1.商品情報の出し分けのための配列を定義
 
-
-
-// // コピペ開始
-
-// let A = null; //変数Aを用意する
-
-// let B = [0,1,2,3]; //共通化するために配列Bに変数Aを入れる
-
-// //以下共通化した数字を各ボタンの押下と紐付け（定義）
-
-
-// let C = ['Straight', 'Wave', 'Natural','分からない'];
-// let D = ['ストレート', 'ウェーブ', 'ナチュラル','分からない'];
-// let E = ['img/girl_straight.png', 'img/girl_wave.png', 'img/girl_natural.png','分からない'];
-
-// //コピペ終了
-
-// $(function(){
-//    $('#idLoadLlink').load('https://nagisatakahashi.github.io/Gs_kadai2_test/ #btn_st');
-//    console.log(C[A]);
-// });
-
-
-
-
-// $(function(){
-//   $("#recommend_item").on('click', function(){
-//     console.log(C[A]);
-//     $(".kokkaku_type_eng").text(C[A]); //英語表記したいので配列Cを使用
-//   });
-// });
-
-  
-
-// ここからアイテム配列（image、title、detail）の出し分け設定
-
-// let AA = null; //変数AAを用意する
-
-// let BB = [0,1,2,3]; //共通化するために配列BBに変数AAを入れる
-
-// //以下共通化した数字を各ボタンの押下と紐付け（定義）
-
-// $("#btn_st").on('click', function(){
-//   AA = 0;
-//   console.log(BB[AA]);
-// });
-
-// $("#btn_wv").on('click', function(){
-//   AA = 1;
-//   console.log(BB[AA]);
-// });
-
-// $("#btn_nt").on('click', function(){
-//   AA = 2;
-//   console.log(BB[AA]);
-// });
-
-// $("#btn_unkown").on('click', function(){
-//   AA = 3;
-//   console.log(BB[AA]);
-// });
-
-
-// let CC = ['Straight', 'Wave', 'Natural','分からない'];
-// let DD = ['ストレート', 'ウェーブ', 'ナチュラル','分からない'];
-
-
-
-
-
-
-//imageの出し分けのための変数
-
-// var X = null;
-
-// let n = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]; //もっとスマートに記述できる方法ないかな？
-
-// var object[n] = {"image":"null","title":"null","detail":"null"};
+  // var object = {"image":"null","title":"null","detail":"null"}; の構造になっています。
 
 var object_itemlist= [
  {"image":'img/st_1.jpeg',"title":"上品見え2wayキャミワンピース","detail":"胸元のVカットと上品見えする細ストライプ柄がストレートタイプにぴったりの1着。華奢なストラップや深めのスリットなど、ドキッとする女性らしさも演出。ストレッチ性がありながらも薄すぎない生地感だから、レイヤードしてももたつかず◎。"},
@@ -115,479 +40,244 @@ var object_itemlist= [
  {"image":'img/nt_10.jpeg',"title":"デシンマキシティアードワンピ","detail":"ラフなアイテムの多いナチュラルタイプですが、細かすぎなければフリル使いもOK。マキシ丈のティアードやマーメイドワンピースは甘くなりすぎず、絶妙なバランスになりおすすめです。表情豊かなフリンジジャカードドレスなら、まわりと差がつくワンピスタイルに。"}
 ];
 
-// console.log(object_itemlist[10].title);
-
-// console.log(object_itemlist[20].detail);
-
-// console.log(object[n].title);
+  //出力チェック
+  // console.log(object_itemlist[10].title);
 
 
 
-//以下にて乱数を生成する--------
+// 2.以下にて乱数を生成・商品情報の配列リストを指定して情報をひっぱってくる処理--------
 
 
-// /** min以上max以下の整数値の乱数を返す */
 
-// $("#btn_st").on('click', function(){
+// 2-B.変数リストは１つで中の数字を骨格別に分ける方法（後の処理が楽）
 
-  const pickN = (min, max, n) => {
-    const list = new Array(max-min+1).fill().map((_, i) => i + min);
-    const ret = [];
-    while(n--) {
-      const rand = Math.floor(Math.random() * (list.length + 1)) - 1;
-      ret.push(...list.splice(rand, 1))
+  // documentが読み込まれた時点から処理がスタートする合図
+
+  $(document).ready(function () {
+
+    //2-B-1. 場合分けのためにまずパラメーターを取ってくる（判定する）準備
+
+    var url = location.href;
+    var paramArray = [];
+    urlsplt = url.split("?");
+    parsplt = urlsplt[1].split("&");
+    
+    for ( i = 0; i < parsplt.length; i++ ) {
+    param = parsplt[i].split("=");
+    paramArray.push(param[0]);
+    paramArray[param[0]] = param[1];
     }
-    return ret;
-  }
 
-  const list_st = pickN(0, 9, 3); //数字を格納する配列リスト,数字が３つ入る
-  console.log(list_st); //ストレートを選んだ人向けのリスト
+    //2.B-2. min以上max以下の整数値の乱数を返す準備
 
-  const list_wv = pickN(10, 19, 3); //数字を格納する配列リスト,数字が３つ入る
-  console.log(list_wv); //ウェーブを選んだ人向けのリスト
+    const pickN = (min, max, n) => {
+      const list = new Array(max-min+1).fill().map((_, i) => i + min);
+      const ret = [];
+      while(n--) {
+        const rand = Math.floor(Math.random() * (list.length + 1)) - 1;
+        ret.push(...list.splice(rand, 1))
+      }
+      return ret;
+    }
 
-  const list_nt = pickN(20, 29, 3); //数字を格納する配列リスト,数字が３つ入る
-  console.log(list_nt); //ナチュラルを選んだ人向けのリスト
+    //2.B-3.取ってきたパラメーターの値ごとにif分岐で文字を表示するためのハコ
 
-  const list_all = pickN(0, 29, 3); //数字を格納する配列リスト,数字が３つ入る
-  console.log(list_all); //骨格不明を選んだ人向けのリスト
+    var X = null; //文字を表示するための箱
+    let Y = ['Straight', 'Wave', 'Natural','分からない']; //文字を表示するための配列
 
-// });
-// ここまで、変数リストを骨格毎に分ける方法
+    //2-B-4.取ってきたパラメーターの値ごとにif分岐で数字を割り付けるための箱
 
-// ここからは変数リストは１つで、その中に入る数字をIf文で分ける方法をためす（あとの処理がこちらのほうが１本の分岐で済みそうなので）
+    var list = null;
+
+    //2-B-5.取ってきたパラメーターの値ごとにif分岐で数字をXとlistに入れていく
+
+    if ( paramArray["id"] == "Straight") { //idにstraightというパラメーターを持つ場合の処理
+      var list = pickN(0, 9, 3); //数字を格納する配列リストlistに0-9の数字の中から3つ入れる
+      var X = 0; //ハコにストレートの場合は0と定義
+      // console.log(list); //ストレートを選んだ人向けのリストを出力（一応）
+
+      } else if ( paramArray["id"] == "Wave") { //idにwaveというパラメーターを持つ場合の処理
+      var list = pickN(10, 19, 3); //数字を格納する配列リストlistに10-19の数字の中から3つ入れる
+      var X = 1; //ハコにWVの場合は1と定義
+
+      } else if ( paramArray["id"] == "Natural") { //以下natural向け
+        var list = pickN(20, 29, 3);
+        var X = 2;  
+        
+      } else if ( paramArray["id"] == "unknown") { //以下骨格不明向け
+        var list = pickN(0, 29, 3); 
+        var X = 3;
+    };
+
+    //出力チェック
+    console.log(list); 
+
+    //2-B-6.リストに３つ入った数字をそれぞれnum1/num2/num3に置き換える（object_itemlistのインデックス番号を指定するため）
+
+    var num1 = list[0] //list_numのうち1つめの番号
+    var num2 = list[1] //list_numのうち2つめの番号
+    var num3 = list[2] //list_numのうち3つめの番号
 
 
+    //2-B-7.選んだ骨格に合わせてテキストを出し分け（タイトル用）
 
-// $("#btn_st").on('click', function(){
-//   const pickN = (min, max, n) => {
-//     const list = new Array(max-min+1).fill().map((_, i) => i + min);
-//     const ret = [];
-//     while(n--) {
-//       const rand = Math.floor(Math.random() * (list.length + 1)) - 1;
-//       ret.push(...list.splice(rand, 1))
-//     }
-//     return ret;
-//   }
-//   var list_num = pickN(0, 9, 3); //数字を格納する配列リスト,数字が３つ入る
-//   console.log(list_num); //数字が入ったリスト
-//   console.log(list_num[0]); 
-//   console.log(list_num[1]); 
-//   console.log(list_num[2]); 
-// });
+    $(".kokkaku_type_eng").text(Y[X])
 
-// $("#btn_wv").on('click', function(){
-//   const pickN = (min, max, n) => {
-//     const list = new Array(max-min+1).fill().map((_, i) => i + min);
-//     const ret = [];
-//     while(n--) {
-//       const rand = Math.floor(Math.random() * (list.length + 1)) - 1;
-//       ret.push(...list.splice(rand, 1))
-//     }
-//     return ret;
-//   }
-//   var list_num = pickN(10, 19, 3); //数字を格納する配列リスト,数字が３つ入る
-//   console.log(list_num); //数字が入ったリスト
-//   console.log(list_num[0]); 
-//   console.log(list_num[1]); 
-//   console.log(list_num[2]); 
-// });
+    //2-B-7.選んだ骨格に合わせて商品情報を出し分け（メインコンテンツ用）
+    $("#li_item_image_1").attr("src",object_itemlist[num1].image)
+    $("#li_item_title_1").text(object_itemlist[num1].title)
+    $("#li_item_detail_1").text(object_itemlist[num1].detail)
+    $("#li_item_image_2").attr("src",object_itemlist[num2].image)
+    $("#li_item_title_2").text(object_itemlist[num2].title)
+    $("#li_item_detail_2").text(object_itemlist[num2].detail)
+    $("#li_item_image_3").attr("src",object_itemlist[num3].image)
+    $("#li_item_title_3").text(object_itemlist[num3].title)
+    $("#li_item_detail_3").text(object_itemlist[num3].detail)
+  });
 
-// $("#btn_nt").on('click', function(){
-//   const pickN = (min, max, n) => {
-//     const list = new Array(max-min+1).fill().map((_, i) => i + min);
-//     const ret = [];
-//     while(n--) {
-//       const rand = Math.floor(Math.random() * (list.length + 1)) - 1;
-//       ret.push(...list.splice(rand, 1))
-//     }
-//     return ret;
-//   }
-//   var list_num = pickN(20, 29, 3); //数字を格納する配列リスト,数字が３つ入る
-//   console.log(list_num); //数字が入ったリスト
-//   console.log(list_num[0]); 
-//   console.log(list_num[1]); 
-//   console.log(list_num[2]); 
-// });
 
-// $("#btn_unkown").on('click', function(){
-//   const pickN = (min, max, n) => {
-//     const list = new Array(max-min+1).fill().map((_, i) => i + min);
-//     const ret = [];
-//     while(n--) {
-//       const rand = Math.floor(Math.random() * (list.length + 1)) - 1;
-//       ret.push(...list.splice(rand, 1))
-//     }
-//     return ret;
-//   }
-//   var list_num = pickN(0, 29, 3); //数字を格納する配列リスト,数字が３つ入る
-//   console.log(list_num); //数字が入ったリスト
-//   console.log(list_num[0]); 
-//   console.log(list_num[1]); 
-//   console.log(list_num[2]); 
-// });
+//以上！！！！
+//★★ここまでのコードは、一番コンパクトにまとまったバージョン！★★
 
 
 
-  // const list_num = pickN(0, 29, 3); //数字を格納する配列リスト,数字が３つ入る
-  // console.log(list_num); //骨格不明を選んだ人向けのリスト
-
-// ここまで数字の取り扱いをわけて検証
+//★以下、もらったパラメーターごとに最初に分岐させるのがうまくいかずに、
 
 
+// 2-C.変数リストを骨格毎に分ける方法(処理が重複するので避けたほうが良い)
+
+  // 2-C-1.  min以上max以下の整数値の乱数を返す
+
+    // const pickN = (min, max, n) => {
+    //   const list = new Array(max-min+1).fill().map((_, i) => i + min);
+    //   const ret = [];
+    //   while(n--) {
+    //     const rand = Math.floor(Math.random() * (list.length + 1)) - 1;
+    //     ret.push(...list.splice(rand, 1))
+    //   }
+    //   return ret;
+    // }
+
+  //2-C-2.  場合分けせずに、骨格タイプ別にそれぞれ定義した数値範囲の中から3つの数字を配列に格納
+    //【補足】
+    //どのボタンが押されていようとも、骨格タイプ別×各3つの数字のリストができあがる処理
+    //(つまり、ST向け(1,2,3)+WV向け(10,15,16)+NT向け+ALL向け〜の4つ配列が出力される※のちに1つしか使わないのに…)
+    //なんでこんなことをしたかというと、やりたくなかったのに、list_stとかlist_wvとかがif分岐の外で使えなかったので（return?戻り値が必要？？）この時点ではIf分岐をさせずにひとまずすべての場合の配列タイプを自動で生み出してしまってあとでどれを使うか判定させて使うものだけを取り出して使う方法しか、この時点ではできなかったため。（最後までif分岐をまたいだ共通の変数を使わなくてすむ方法で突破…。。無駄感あるけど。。。）
+
+    // const list_st = pickN(0, 9, 3); //数字を格納する配列リスト,数字が３つ入る
+    // console.log(list_st); //ストレートを選んだ人向けのリスト
+
+    // const list_wv = pickN(10, 19, 3); //数字を格納する配列リスト,数字が３つ入る
+    // console.log(list_wv); //ウェーブを選んだ人向けのリスト
+
+    // const list_nt = pickN(20, 29, 3); //数字を格納する配列リスト,数字が３つ入る
+    // console.log(list_nt); //ナチュラルを選んだ人向けのリスト
+
+    // const list_all = pickN(0, 29, 3); //数字を格納する配列リスト,数字が３つ入る
+    // console.log(list_all); //骨格不明を選んだ人向けのリスト
+
+  // ここまで、変数リストを骨格毎に分ける方法
 
 
-// 以下、配列名を可変にしようとおもったのですがPHPじゃないとできないらしい？---
+  //2-C-3. パラメーターの受け取りと判定判別の準備
 
-  //配列AAを再利用する
-
-  // let EE = ["st","wv","nt","all"];
-
-  // $(".kokkaku_btn").on('click', function(){
-
-  //   console.log(EE[AA]);
+    // var url = location.href;
+    // var paramArray = [];
+    // urlsplt = url.split("?");
+    // parsplt = urlsplt[1].split("&");
     
-  //   var x = EE[AA]; //stとか
-  //   console.log(x); //stとかを表示
-    
-  //   var y = "list_" + x; //list_stとか
-  //   console.log(y); //list_st とかを表示
+    // for ( i = 0; i < parsplt.length; i++ ) {
+    // param = parsplt[i].split("=");
+    // paramArray.push(param[0]);
+    // paramArray[param[0]] = param[1];
+    // }
+ 
+
+  //2-C-4.If分岐で骨格情報を出し分けするための箱と配列を用意
+
+    // var X = null; //文字を表示するための箱
+    // let Y = ['Straight', 'Wave', 'Natural','分からない']; //文字を表示するための配列
+
+  //2-C-5.パラメーターの判別とそれによるIf分岐で商品情報の出し分け
+  
+  // // URLの一部が[id=Straight]の場合の処理
+
+  // if ( paramArray["id"] == "Straight") { //パラメーターの値を判定
+  //   var X = 0; //
+  //   $(document).ready(function () {
+  //     console.log("ready!");
+  //     $(".kokkaku_type_eng").text(Y[X])
+
+  //     $("#li_item_image_1").attr("src",object_itemlist[st_num1].image)
+  //     $("#li_item_title_1").text(object_itemlist[st_num1].title)
+  //     $("#li_item_detail_1").text(object_itemlist[st_num1].detail)
+  //     $("#li_item_image_2").attr("src",object_itemlist[st_num2].image)
+  //     $("#li_item_title_2").text(object_itemlist[st_num2].title)
+  //     $("#li_item_detail_2").text(object_itemlist[st_num2].detail)
+  //     $("#li_item_image_3").attr("src",object_itemlist[st_num3].image)
+  //     $("#li_item_title_3").text(object_itemlist[st_num3].title)
+  //     $("#li_item_detail_3").text(object_itemlist[st_num3].detail)
+  //   });
+
+  // // URLの一部が[id=Wave]の場合の処理
+
+  // } else if ( paramArray["id"] == "Wave") {
+  //   var X = 1;
+  //   $(document).ready(function () {
+  //     $(".kokkaku_type_eng").text(Y[X])
+
+  //     $("#li_item_image_1").attr("src",object_itemlist[wv_num1].image)
+  //     $("#li_item_title_1").text(object_itemlist[wv_num1].title)
+  //     $("#li_item_detail_1").text(object_itemlist[wv_num1].detail)
+  //     $("#li_item_image_2").attr("src",object_itemlist[wv_num2].image)
+  //     $("#li_item_title_2").text(object_itemlist[wv_num2].title)
+  //     $("#li_item_detail_2").text(object_itemlist[wv_num2].detail)
+  //     $("#li_item_image_3").attr("src",object_itemlist[wv_num3].image)
+  //     $("#li_item_title_3").text(object_itemlist[wv_num3].title)
+  //     $("#li_item_detail_3").text(object_itemlist[wv_num3].detail)
+  //     console.log("ready!");
+  //   });
+
+  // // URLの一部が[id=Natural]の場合の処理
+
+  // } else if ( paramArray["id"] == "Natural") {
+  //   var X = 2;
+  //   $(document).ready(function () {
+  //   $(".kokkaku_type_eng").text(Y[X])
+
+  //   $("#li_item_image_1").attr("src",object_itemlist[nt_num1].image)
+  //   $("#li_item_title_1").text(object_itemlist[nt_num1].title)
+  //   $("#li_item_detail_1").text(object_itemlist[nt_num1].detail)
+  //   $("#li_item_image_2").attr("src",object_itemlist[nt_num2].image)
+  //   $("#li_item_title_2").text(object_itemlist[nt_num2].title)
+  //   $("#li_item_detail_2").text(object_itemlist[nt_num2].detail)
+  //   $("#li_item_image_3").attr("src",object_itemlist[nt_num3].image)
+  //   $("#li_item_title_3").text(object_itemlist[nt_num3].title)
+  //   $("#li_item_detail_3").text(object_itemlist[nt_num3].detail)
   // });
-
-// ここまでtry&error(PHP学習待ち）---
-
-
-// ここから共通化しようとしたけど沼ったので一回消す---
-
-  // var num1 = list_num[0] 
-  // var num2 = list_num[1] 
-  // var num3 = list_num[2] 
-
-
-
-
-
-  // $(".kokkaku_btn").on('click', function(){
-
-
-  //   console.log(num1); //list_numのうち1つめの番号
-  //   console.log(num2); //list_numのうち2つめの番号
-  //   console.log(num3); //list_numのうち3つめの番号
-
-  //   console.log(object_itemlist[num1].image); //list_numのうち1つめの番号の配列の中身を表示
-  //   console.log(object_itemlist[num1].title); //list_numのうち1つめの番号の配列の中身を表示
-  //   console.log(object_itemlist[num1].detail); //list_numのうち1つめの番号の配列の中身を表示
-  //   console.log(object_itemlist[num2].image); //list_numのうち2つめの番号の配列の中身を表示
-  //   console.log(object_itemlist[num2].title); //list_numのうち2つめの番号の配列の中身を表示
-  //   console.log(object_itemlist[num2].detail); //list_numのうち2つめの番号の配列の中身を表示
-  //   console.log(object_itemlist[num3].image); //list_numのうち3つめの番号の配列の中身を表示
-  //   console.log(object_itemlist[num3].title); //list_numのうち3つめの番号の配列の中身を表示
-  //   console.log(object_itemlist[num3].detail); //list_numのうち3つめの番号の配列の中身を表示
-
-
-
-
-  //   //乱数の生成ここまで--------
-
-  //   //生成した乱数を配列に代入して表示したい要素（画像や説明文）を表示する--------
-
-  //   $(".kokkaku_btn").on("click",function(){
-  //     $("#li_item_image_1").attr("src",object_itemlist[num1].image)
-  //     $("#li_item_title_1").text(object_itemlist[num1].title)
-  //     $("#li_item_detail_1").text(object_itemlist[num1].detail)
-  //   }
-  //   );
-
-  //   $(".kokkaku_btn").on("click",function(){
-  //     $("#li_item_image_2").attr("src",object_itemlist[num2].image)
-  //     $("#li_item_title_2").text(object_itemlist[num2].title)
-  //     $("#li_item_detail_2").text(object_itemlist[num2].detail)
-  //   }
-  //   );
-
-  //   $(".kokkaku_btn").on("click",function(){
-  //     $("#li_item_image_3").attr("src",object_itemlist[num3].image)
-  //     $("#li_item_title_3").text(object_itemlist[num3].title)
-  //     $("#li_item_detail_3").text(object_itemlist[num3].detail)
-  //   }
-  //   );
-
-
-
-  // });
-
-
-// ここまで共通化しようとしたけど沼ったので一回消す---
-
-
-
-//----もともとのコード（一時的にコメントアウト）
-
-
-// let num1 = list_num[0] //list_numのうち1つめの番号
-// let num2 = list_num[1] //list_numのうち2つめの番号
-// let num3 = list_num[2] //list_numのうち3つめの番号
-
-
-let st_num1 = list_st[0] //list_stのうち1つめの番号
-let st_num2 = list_st[1] //list_stのうち2つめの番号
-let st_num3 = list_st[2] //list_stのうち3つめの番号
-
-let wv_num1 = list_wv[0] //list_wvのうち1つめの番号
-let wv_num2 = list_wv[1] //list_wvのうち2つめの番号
-let wv_num3 = list_wv[2] //list_wvのうち3つめの番号
-
-let nt_num1 = list_nt[0] //list_ntのうち1つめの番号
-let nt_num2 = list_nt[1] //list_ntのうち2つめの番号
-let nt_num3 = list_nt[2] //list_ntのうち3つめの番号
-
-let all_num1 = list_all[0] //list_ntのうち1つめの番号
-let all_num2 = list_all[1] //list_ntのうち2つめの番号
-let all_num3 = list_all[2] //list_ntのうち3つめの番号
-
-
-// let num1 = y[0] //list_stのうち1つめの番号
-// let num2 = y[1] //list_stのうち2つめの番号
-// let num3 = y[2] //list_stのうち3つめの番号
-
-// console.log(st_num1); //list_stのうち1つめの番号
-// console.log(st_num2); //list_stのうち2つめの番号
-// console.log(st_num3); //list_stのうち3つめの番号
-
-// console.log(object_itemlist[st_num1].image); //list_stのうち1つめの番号の配列の中身を表示
-// console.log(object_itemlist[st_num1].title); //list_stのうち1つめの番号の配列の中身を表示
-// console.log(object_itemlist[st_num1].detail); //list_stのうち1つめの番号の配列の中身を表示
-// console.log(object_itemlist[st_num2].image); //list_stのうち2つめの番号の配列の中身を表示
-// console.log(object_itemlist[st_num2].title); //list_stのうち2つめの番号の配列の中身を表示
-// console.log(object_itemlist[st_num2].detail); //list_stのうち2つめの番号の配列の中身を表示
-// console.log(object_itemlist[st_num3].image); //list_stのうち3つめの番号の配列の中身を表示
-// console.log(object_itemlist[st_num3].title); //list_stのうち3つめの番号の配列の中身を表示
-// console.log(object_itemlist[st_num3].detail); //list_stのうち3つめの番号の配列の中身を表示
-
-
-//乱数の生成ここまで--------
-
-//生成した乱数を配列に代入して表示したい要素（画像や説明文）を表示する--------
-
-// $("#btn_st").on("click",function(){
-//   $("#li_item_image_1").attr("src",object_itemlist[st_num1].image)
-//   $("#li_item_title_1").text(object_itemlist[st_num1].title)
-//   $("#li_item_detail_1").text(object_itemlist[st_num1].detail)
-//   $("#li_item_image_2").attr("src",object_itemlist[st_num2].image)
-//   $("#li_item_title_2").text(object_itemlist[st_num2].title)
-//   $("#li_item_detail_2").text(object_itemlist[st_num2].detail)
-//   $("#li_item_image_3").attr("src",object_itemlist[st_num3].image)
-//   $("#li_item_title_3").text(object_itemlist[st_num3].title)
-//   $("#li_item_detail_3").text(object_itemlist[st_num3].detail)
-// }
-// );
-
-// $("#btn_wv").on("click",function(){
-//   $("#li_item_image_1").attr("src",object_itemlist[wv_num1].image)
-//   $("#li_item_title_1").text(object_itemlist[wv_num1].title)
-//   $("#li_item_detail_1").text(object_itemlist[wv_num1].detail)
-//   $("#li_item_image_2").attr("src",object_itemlist[wv_num2].image)
-//   $("#li_item_title_2").text(object_itemlist[wv_num2].title)
-//   $("#li_item_detail_2").text(object_itemlist[wv_num2].detail)
-//   $("#li_item_image_3").attr("src",object_itemlist[wv_num3].image)
-//   $("#li_item_title_3").text(object_itemlist[wv_num3].title)
-//   $("#li_item_detail_3").text(object_itemlist[wv_num3].detail)
-// }
-// );
-
-
-// $("#btn_nt").on("click",function(){
-//   $("#li_item_image_1").attr("src",object_itemlist[nt_num1].image)
-//   $("#li_item_title_1").text(object_itemlist[nt_num1].title)
-//   $("#li_item_detail_1").text(object_itemlist[nt_num1].detail)
-//   $("#li_item_image_2").attr("src",object_itemlist[nt_num2].image)
-//   $("#li_item_title_2").text(object_itemlist[nt_num2].title)
-//   $("#li_item_detail_2").text(object_itemlist[nt_num2].detail)
-//   $("#li_item_image_3").attr("src",object_itemlist[nt_num3].image)
-//   $("#li_item_title_3").text(object_itemlist[nt_num3].title)
-//   $("#li_item_detail_3").text(object_itemlist[nt_num3].detail)
-// }
-// );
-
-// $("#btn_unkown").on("click",function(){
-//   $("#li_item_image_1").attr("src",object_itemlist[all_num1].image)
-//   $("#li_item_title_1").text(object_itemlist[all_num1].title)
-//   $("#li_item_detail_1").text(object_itemlist[all_num1].detail)
-//   $("#li_item_image_2").attr("src",object_itemlist[all_num2].image)
-//   $("#li_item_title_2").text(object_itemlist[all_num2].title)
-//   $("#li_item_detail_2").text(object_itemlist[all_num2].detail)
-//   $("#li_item_image_3").attr("src",object_itemlist[all_num3].image)
-//   $("#li_item_title_3").text(object_itemlist[all_num3].title)
-//   $("#li_item_detail_3").text(object_itemlist[all_num3].detail)
-// }
-// );
-
-
-// 共通処理
-
-// $(document).ready(function () {
-//   console.log("ready!");
-//   $("#li_item_image_1").attr("src",object_itemlist[all_num1].image)
-//   $("#li_item_title_1").text(object_itemlist[all_num1].title)
-//   $("#li_item_detail_1").text(object_itemlist[all_num1].detail)
-//   $("#li_item_image_2").attr("src",object_itemlist[all_num2].image)
-//   $("#li_item_title_2").text(object_itemlist[all_num2].title)
-//   $("#li_item_detail_2").text(object_itemlist[all_num2].detail)
-//   $("#li_item_image_3").attr("src",object_itemlist[all_num3].image)
-//   $("#li_item_title_3").text(object_itemlist[all_num3].title)
-//   $("#li_item_detail_3").text(object_itemlist[all_num3].detail)
-// });
-
-
-
-var AAA = null;
-var BBB = [0,1,2,3];
-let C = ['Straight', 'Wave', 'Natural','分からない'];
-let D = ['ストレート', 'ウェーブ', 'ナチュラル','分からない'];
-let E = ['img/girl_straight.png', 'img/girl_wave.png', 'img/girl_natural.png','分からない'];
-
-
-
-var url = location.href;
-var paramArray = [];
-urlsplt = url.split("?");
-parsplt = urlsplt[1].split("&");
- 
-for ( i = 0; i < parsplt.length; i++ ) {
-param = parsplt[i].split("=");
-paramArray.push(param[0]);
-paramArray[param[0]] = param[1];
-}
- 
-
- // URLの一部が[id=Straight]の場合の処理
-if ( paramArray["id"] == "Straight") {
-  var AA = 0;
-  $(document).ready(function () {
-    console.log("ready!");
-    $(".kokkaku_type_eng").text(C[AA])
-
-    $("#li_item_image_1").attr("src",object_itemlist[st_num1].image)
-    $("#li_item_title_1").text(object_itemlist[st_num1].title)
-    $("#li_item_detail_1").text(object_itemlist[st_num1].detail)
-    $("#li_item_image_2").attr("src",object_itemlist[st_num2].image)
-    $("#li_item_title_2").text(object_itemlist[st_num2].title)
-    $("#li_item_detail_2").text(object_itemlist[st_num2].detail)
-    $("#li_item_image_3").attr("src",object_itemlist[st_num3].image)
-    $("#li_item_title_3").text(object_itemlist[st_num3].title)
-    $("#li_item_detail_3").text(object_itemlist[st_num3].detail)
-  });
-
-// URLの一部が[id=Wave]の場合の処理
-} else if ( paramArray["id"] == "Wave") {
-  var AA = 1;
-  $(document).ready(function () {
-    $(".kokkaku_type_eng").text(C[AA])
-
-    $("#li_item_image_1").attr("src",object_itemlist[wv_num1].image)
-    $("#li_item_title_1").text(object_itemlist[wv_num1].title)
-    $("#li_item_detail_1").text(object_itemlist[wv_num1].detail)
-    $("#li_item_image_2").attr("src",object_itemlist[wv_num2].image)
-    $("#li_item_title_2").text(object_itemlist[wv_num2].title)
-    $("#li_item_detail_2").text(object_itemlist[wv_num2].detail)
-    $("#li_item_image_3").attr("src",object_itemlist[wv_num3].image)
-    $("#li_item_title_3").text(object_itemlist[wv_num3].title)
-    $("#li_item_detail_3").text(object_itemlist[wv_num3].detail)
-    console.log("ready!");
-  });
-
-// URLの一部が[id=Natural]の場合の処理
-} else if ( paramArray["id"] == "Natural") {
-  var AA = 2;
-  $(document).ready(function () {
-  $(".kokkaku_type_eng").text(C[AA])
-
-  $("#li_item_image_1").attr("src",object_itemlist[nt_num1].image)
-  $("#li_item_title_1").text(object_itemlist[nt_num1].title)
-  $("#li_item_detail_1").text(object_itemlist[nt_num1].detail)
-  $("#li_item_image_2").attr("src",object_itemlist[nt_num2].image)
-  $("#li_item_title_2").text(object_itemlist[nt_num2].title)
-  $("#li_item_detail_2").text(object_itemlist[nt_num2].detail)
-  $("#li_item_image_3").attr("src",object_itemlist[nt_num3].image)
-  $("#li_item_title_3").text(object_itemlist[nt_num3].title)
-  $("#li_item_detail_3").text(object_itemlist[nt_num3].detail)
-});
- 
-  // URLの一部が[id=unknown]の場合の処理
-} else if ( paramArray["id"] == "unknown") {
-  var AA = 3;
-  $(document).ready(function () {
-    $(".kokkaku_type_eng").text("未診断")
-
-    $("#li_item_image_1").attr("src",object_itemlist[all_num1].image)
-    $("#li_item_title_1").text(object_itemlist[all_num1].title)
-    $("#li_item_detail_1").text(object_itemlist[all_num1].detail)
-    $("#li_item_image_2").attr("src",object_itemlist[all_num2].image)
-    $("#li_item_title_2").text(object_itemlist[all_num2].title)
-    $("#li_item_detail_2").text(object_itemlist[all_num2].detail)
-    $("#li_item_image_3").attr("src",object_itemlist[all_num3].image)
-    $("#li_item_title_3").text(object_itemlist[all_num3].title)
-    $("#li_item_detail_3").text(object_itemlist[all_num3].detail)
-  });
-
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// $(".kokkaku_btn").on('click', function(){        
-//     if(AA=3){
-//       var num1 = Math.floor(Math.random() * 30);
-//       var num2 = Math.floor(Math.random() * 30);
-//       var num3 = Math.floor(Math.random() * 30);
-//     } else if (AA=1){
-
-
-
-//     }
-
-//     var num1 = Math.floor(Math.random() * 30);
-//     var num2 = Math.floor(Math.random() * 30);
-//     var num3 = Math.floor(Math.random() * 30);
-
-//     console.log(num1, "ランダム生成した結果の数字"); 
-//     console.log(num2, "ランダム生成した結果の数字"); 
-//     console.log(num3, "ランダム生成した結果の数字"); //ここまで確認OK
-
-
-//     var num1 = Math.floor(Math.random() * 30);
-//     var num2 = Math.floor(Math.random() * 30);
-//     var num3 = Math.floor(Math.random() * 30);
-
-//     console.log(num1, "ランダム生成した結果の数字"); 
-//     console.log(num2, "ランダム生成した結果の数字"); 
-//     console.log(num3, "ランダム生成した結果の数字"); //ここまで確認OK
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
+  //   // URLの一部が[id=unknown]の場合の処理
+
+  // } else if ( paramArray["id"] == "unknown") {
+  //   var X = 3;
+  //   $(document).ready(function () {
+  //     $(".kokkaku_type_eng").text("未診断") //この場合だけ文字列で代入
+
+  //     $("#li_item_image_1").attr("src",object_itemlist[all_num1].image)
+  //     $("#li_item_title_1").text(object_itemlist[all_num1].title)
+  //     $("#li_item_detail_1").text(object_itemlist[all_num1].detail)
+  //     $("#li_item_image_2").attr("src",object_itemlist[all_num2].image)
+  //     $("#li_item_title_2").text(object_itemlist[all_num2].title)
+  //     $("#li_item_detail_2").text(object_itemlist[all_num2].detail)
+  //     $("#li_item_image_3").attr("src",object_itemlist[all_num3].image)
+  //     $("#li_item_title_3").text(object_itemlist[all_num3].title)
+  //     $("#li_item_detail_3").text(object_itemlist[all_num3].detail)
+  //   });
+
+  // };
+
+  //以上！
+  //できなくはないけど最後の場合分けの処理がめちゃめちゃ重複するので、無駄感がすごい！！！！
+  //最初にこのパターンで実装してなんとかできたので、後に2-B.の方法に改善しました！！★★
 
 

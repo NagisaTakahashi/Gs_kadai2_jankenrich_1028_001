@@ -7,7 +7,7 @@ $(function(){
 
     //OPENをクリックでモーダルを開く
     c.on('click',function(){
-      a.fadeIn(2000);
+      a.fadeIn(1000);
     });
     
     //CLOSEをクリックでモーダルを閉じる
@@ -85,11 +85,10 @@ $(".kokkaku_btn").on('click', function(){
 
 // 以下、選んだ骨格ごとにリンクさせる遷移先の設定
 
+
 //ボタン① 骨格別のオススメ服案内
 
 let F = ['https://www.instagram.com/recouture_official/guide/straight/17964207523716827/', 'https://www.instagram.com/recouture_official/guide/wave/17991004261479437/', 'https://www.instagram.com/recouture_official/guide/natural/17903782181590424/','#'];
-
-
 
   $("#recommend_design").on('click', function(){
   window.location.href = (F[A]); //リンク遷移切替したいので配列Fを使用
@@ -123,6 +122,8 @@ $("#recommend_item").on('click', function(){
 
 
 //★★パラメーターをつけてリンクをとばすところまでできた！！！すごい！
+
+//ボタン③ おすすめカスタマイズレシピへの遷移
 
 
 
