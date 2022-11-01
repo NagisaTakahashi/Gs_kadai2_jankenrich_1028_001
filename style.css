@@ -127,7 +127,7 @@ body{
   position: relative;
   max-width: 500px;
   width: 84vw;
-  height: 80vh;
+  min-height: 80vh;
   border-radius: 20px;
   display: flex;
 }
