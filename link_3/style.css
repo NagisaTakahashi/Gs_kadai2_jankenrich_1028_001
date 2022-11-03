@@ -86,6 +86,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 400px;
 }
 
 .li_item{
@@ -99,6 +100,7 @@ body{
   display:block;
   width: 58vw;
   height: calc(58vw * 0.66);
+  max-width: 400px;
 }
 
 .li_item_img{
