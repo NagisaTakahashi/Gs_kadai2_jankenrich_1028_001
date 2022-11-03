@@ -43,21 +43,12 @@ body{
 /* -------main--------- */
 
 .main{
-  align-items: center;
-  text-align: center;
-  height: 80vh;
   letter-spacing: 0.1em;
 }
 
 .main_title_wrapper{
   text-align: center;
 }
-
-
-
-/* .main p{
-  font-family: 'ryo-gothic-plusn';
-} */
 
 /* ここまでは親CSSと共通（コピペ）→次はコンポーネント化しておきたい */
 
@@ -91,18 +82,28 @@ body{
 }
 
 .recommend_item{
-  width: 80vw;
   flex-wrap: wrap;
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .li_item{
   width: 60vw;
   display: flex;
   justify-content: center;
+}
+
+
+.li_item img{
+  display:block;
+  width: 58vw;
+  height: calc(58vw * 0.66);
+}
+
+.li_item_img{
+  object-fit: cover;
+  box-sizing: border-box;
 }
 
 .item_text{
@@ -112,8 +113,6 @@ body{
 }
 
 .li_item_title{
-  display: table-cell; 
-  width: 44vw;
   margin-left: 1vw;
   line-height: 1.2;
   text-align: left;
@@ -131,13 +130,7 @@ body{
   font-family: 'ryo-gothic-plusn';
 }
 
-.li_item_img{
-  width: 58vw;
-  height: 22vh;
-  object-fit: cover;
-  padding: 0 1vw 1vh;
-  box-sizing: border-box;
-}
+
 
 /* お気に入りボタン設置のための土台設定 */
 .fav{
