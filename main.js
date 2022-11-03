@@ -169,7 +169,20 @@ $("#recommend_item").on('click', function(){
 
 //★★パラメーターをつけてリンクをとばすところまでできた！！！すごい！
 
+
 //ボタン③ おすすめカスタマイズレシピへの遷移
+
+  //ボタン②のJQを流用
+
+$("#recommend_custom").on('click', function(){
+  console.log(C[A]);
+  console.log(`link_3/index.html?id=${C[A]}`);
+  let param = "link_3/index.html?id=" //変数paramにパラメーターの頭文字を固定
+  console.log(`${param}${C[A]}`); //パラメーターを出力
+  window.location.href = (`link_3/index.html?id=${C[A]}`); //下位階層へのリンク遷移＋末尾の?id以下でパラメーターを付与
+  // window.location.href = (`${param}${C[A]}`); //下位階層へのリンク遷移＋末尾の?id以下でパラメーターを付与
+});
+
 
 
 
