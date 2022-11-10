@@ -282,6 +282,8 @@ $("#fav_3").on("click",function(){
 
 
 
+
+
 $(".fav_test").on("click",function(){
 
   for( let iii = 0; iii < localStorage.length; iii++ ){
@@ -304,6 +306,7 @@ $(".fav_test").on("click",function(){
     $("#list").append(html);
 
     }
+    
 
   };
   
