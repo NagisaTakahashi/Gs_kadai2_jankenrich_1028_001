@@ -537,14 +537,6 @@ if ( paramArray["id"] == "Straight") {
 
 
 
-
-
-
-
-
-
-
-
 // $(".kokkaku_btn").on('click', function(){        
 //     if(AA=3){
 //       var num1 = Math.floor(Math.random() * 30);
